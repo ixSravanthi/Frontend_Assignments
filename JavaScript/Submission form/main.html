@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center; padding-top: 100px">
+    <form id="myForm">
+        <label>Username: </label>
+        <input type="text" id="username">
+        <div class="invalid-name" style="color: rgb(210, 4, 4);font-size: smaller;"></div>
+        <div style="padding: 10px;"></div>
+
+        <label>Password: </label>
+        <input type="text" id="password">
+        <div class="invalid-password" style="color: rgb(210, 4, 4);font-size: smaller;"></div>
+        <div style="padding: 10px;"></div>
+
+        <input type="submit">
+        <div class="submit-success" style="color: rgb(77, 170, 77);font-size: smaller"></div>
+    </form>
+</body>
+</html>
+
+<script>
+    validate();
+    function validate(){
+        document.getElementById('myForm').addEventListener('submit',function(event){
+            event.preventDefault();
+            const name=document.getElementById('username').value;
+            const password=document.getElementById('password').value;
+            let invalid_name=1;
+            let invalid_password=1;
+            if(name.length<3){
+                document.getElementsByClassName('invalid-name')[0].innerHTML="Invalid username";
+            }
+            else{
+                document.getElementsByClassName('invalid-name')[0].innerHTML="Valid";
+                invalid_name=0;
+                document.getElementsByClassName('invalid-name')[0].style.color='green';
+            }
+            if(password.length<3){
+                document.getElementsByClassName('invalid-password')[0].innerHTML="Invalid password";
+            }
+            else{
+                document.getElementsByClassName('invalid-password')[0].innerHTML="Valid";
+                invalid_password=0;
+                document.getElementsByClassName('invalid-password')[0].style.color='green';
+            }
+            if(!invalid_name & !invalid_password){
+                document.getElementsByClassName('submit-success')[0].innerHTML="Submitted Successfully"
+            }
+        });
+
+    }
+</script>

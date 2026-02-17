@@ -1,0 +1,590 @@
+let name=prompt("Enter your name:");
+console.log(name.split("").reverse().join(""));
+----------------------------
+const check = (a) =>{
+    if (a%2==0){
+        console.log("Even");
+    }
+    else{
+        console.log("Odd");
+    }
+}
+
+check(10);
+-----------------------------
+let ar=[1,2,3,4,66,9,10];
+let max=0;
+for(let i in ar){
+    if(ar[i]>max){
+        max=ar[i];
+    }
+}
+console.log(max);
+--------------------------------
+let str="javascript";
+let vowel="aeiouAEIOU"
+let count=0;
+for(let i in str){
+    if(vowel.includes(str[i])){
+        count+=1;
+    }
+}
+
+console.log(count)
+----------------------------------
+let num=prompt("Enter a number: ");
+let sum=0;
+for(let i=1;i<=num;i++){
+    sum+=i;
+}
+
+console.log(sum);
+------------------------------------
+const arr=[1,2,5,3,5,1,2,3,4];
+let seen=[];
+let i=0;
+while(i<arr.length){
+    if(!seen.includes(arr[i])){
+        seen.push(arr[i]);
+    }
+    else{
+        arr.splice(i,1);
+        continue;
+    }
+    i++;
+}
+console.log(arr)
+-------------------------------------
+Assesment-1
+const cars = [
+  {
+    company: "Toyota",
+    carModal: "Corolla",
+    carDetails: {
+      manufactureDate: "2018-03-12",
+      color: "White",
+      isManual: true,
+      country: "Japan"
+    }
+  },
+  {
+    company: "Honda",
+    carModal: "Civic",
+    carDetails: {
+      manufactureDate: "2019-07-21",
+      color: "Black",
+      isManual: false,
+      country: "Japan"
+    }
+  },
+  {
+    company: "Hyundai",
+    carModal: "i20",
+    carDetails: {
+      manufactureDate: "2020-01-15",
+      color: "Red",
+      isManual: true,
+      country: "South Korea"
+    }
+  },
+  {
+    company: "Ford",
+    carModal: "EcoSport",
+    carDetails: {
+      manufactureDate: "2017-11-05",
+      color: "Blue",
+      isManual: true,
+      country: "USA"
+    }
+  },
+  {
+    company: "Volkswagen",
+    carModal: "Polo",
+    carDetails: {
+      manufactureDate: "2018-06-30",
+      color: "Grey",
+      isManual: false,
+      country: "Germany"
+    }
+  },
+  {
+    company: "BMW",
+    carModal: "X1",
+    carDetails: {
+      manufactureDate: "2021-04-10",
+      color: "White",
+      isManual: false,
+      country: "Germany"
+    }
+  },
+  {
+    company: "Audi",
+    carModal: "A4",
+    carDetails: {
+      manufactureDate: "2020-09-18",
+      color: "Black",
+      isManual: false,
+      country: "Germany"
+    }
+  },
+  {
+    company: "Mercedes-Benz",
+    carModal: "C-Class",
+    carDetails: {
+      manufactureDate: "2019-02-27",
+      color: "Silver",
+      isManual: false,
+      country: "Germany"
+    }
+  },
+  {
+    company: "Tata",
+    carModal: "Nexon",
+    carDetails: {
+      manufactureDate: "2022-05-14",
+      color: "Blue",
+      isManual: true,
+      country: "India"
+    }
+  },
+  {
+    company: "Mahindra",
+    carModal: "XUV700",
+    carDetails: {
+      manufactureDate: "2023-01-09",
+      color: "White",
+      isManual: false,
+      country: "India"
+    }
+  },
+  {
+    company: "Kia",
+    carModal: "Seltos",
+    carDetails: {
+      manufactureDate: "2021-08-20",
+      color: "Orange",
+      isManual: true,
+      country: "South Korea"
+    }
+  },
+  {
+    company: "Nissan",
+    carModal: "Magnite",
+    carDetails: {
+      manufactureDate: "2020-12-03",
+      color: "Red",
+      isManual: true,
+      country: "Japan"
+    }
+  },
+  {
+    company: "Renault",
+    carModal: "Kwid",
+    carDetails: {
+      manufactureDate: "2019-10-11",
+      color: "Green",
+      isManual: true,
+      country: "France"
+    }
+  },
+  {
+    company: "Skoda",
+    carModal: "Rapid",
+    carDetails: {
+      manufactureDate: "2018-04-19",
+      color: "Silver",
+      isManual: false,
+      country: "Czech Republic"
+    }
+  },
+  {
+    company: "Chevrolet",
+    carModal: "Cruze",
+    carDetails: {
+      manufactureDate: "2017-06-22",
+      color: "Black",
+      isManual: false,
+      country: "USA"
+    }
+  },
+  {
+    company: "Jeep",
+    carModal: "Compass",
+    carDetails: {
+      manufactureDate: "2021-03-05",
+      color: "Brown",
+      isManual: true,
+      country: "USA"
+    }
+  },
+  {
+    company: "MG",
+    carModal: "Hector",
+    carDetails: {
+      manufactureDate: "2022-02-17",
+      color: "White",
+      isManual: false,
+      country: "UK"
+    }
+  },
+  {
+    company: "Volvo",
+    carModal: "XC40",
+    carDetails: {
+      manufactureDate: "2020-07-29",
+      color: "Grey",
+      isManual: false,
+      country: "Sweden"
+    }
+  },
+  {
+    company: "Peugeot",
+    carModal: "308",
+    carDetails: {
+      manufactureDate: "2019-09-14",
+      color: "Blue",
+      isManual: true,
+      country: "France"
+    }
+  },
+  {
+    company: "Fiat",
+    carModal: "Punto",
+    carDetails: {
+      manufactureDate: "2016-12-01",
+      color: "Red",
+      isManual: true,
+      country: "Italy"
+    }
+  },
+  {
+    company: "Suzuki",
+    carModal: "Swift",
+    carDetails: {
+      manufactureDate: "2021-06-08",
+      color: "Yellow",
+      isManual: true,
+      country: "Japan"
+    }
+  },
+  {
+    company: "Lexus",
+    carModal: "RX",
+    carDetails: {
+      manufactureDate: "2022-11-25",
+      color: "White",
+      isManual: false,
+      country: "Japan"
+    }
+  },
+  {
+    company: "Mazda",
+    carModal: "CX-5",
+    carDetails: {
+      manufactureDate: "2020-05-16",
+      color: "Red",
+      isManual: false,
+      country: "Japan"
+    }
+  },
+  {
+    company: "Subaru",
+    carModal: "Forester",
+    carDetails: {
+      manufactureDate: "2019-08-02",
+      color: "Green",
+      isManual: true,
+      country: "Japan"
+    }
+  },
+  {
+    company: "Mitsubishi",
+    carModal: "Outlander",
+    carDetails: {
+      manufactureDate: "2018-10-27",
+      color: "Silver",
+      isManual: false,
+      country: "Japan"
+    }
+  },
+  {
+    company: "Tesla",
+    carModal: "Model 3",
+    carDetails: {
+      manufactureDate: "2023-04-01",
+      color: "White",
+      isManual: false,
+      country: "USA"
+    }
+  },
+  {
+    company: "BYD",
+    carModal: "Atto 3",
+    carDetails: {
+      manufactureDate: "2022-09-12",
+      color: "Blue",
+      isManual: false,
+      country: "China"
+    }
+  },
+  {
+    company: "Citroën",
+    carModal: "C3",
+    carDetails: {
+      manufactureDate: "2021-01-30",
+      color: "Orange",
+      isManual: true,
+      country: "France"
+    }
+  },
+  {
+    company: "Opel",
+    carModal: "Astra",
+    carDetails: {
+      manufactureDate: "2019-03-18",
+      color: "Grey",
+      isManual: false,
+      country: "Germany"
+    }
+  },
+  {
+    company: "Seat",
+    carModal: "Ibiza",
+    carDetails: {
+      manufactureDate: "2020-06-24",
+      color: "Blue",
+      isManual: true,
+      country: "Spain"
+    }
+  }
+]; 
+
+//Task-1
+console.log("Task-1");
+let flag=0;
+cars.forEach(myfun);
+function myfun(value,index,arr){
+    if(!('country' in value.carDetails)){
+        flag=1;
+    }
+}
+if (flag==1){
+    console.log("Some cars does not have a country field");
+}
+else{
+    console.log("Every car has a country field"); 
+}
+console.log("\n");
+
+//Task-2
+console.log("Task-2");
+let manual_count=0;
+let auto_count=0;
+for(let i=0;i<cars.length;i++){
+    if(cars[i].carDetails.isManual){
+        manual_count+=1;
+    }
+    else{
+        auto_count+=1;
+    }
+}
+console.log("Manual Count: "+manual_count+", Automatic Count: "+auto_count);
+console.log("\n");
+
+//Task-3
+console.log("Task-3");
+const car_age=[];
+date=Date().split(" ")
+for(let j=0;j<cars.length;j++){
+    let d=cars[j].carDetails.manufactureDate.slice(0,4);
+    car_age[j]=date[3]-d;
+}
+console.log(car_age);
+console.log("\n");
+
+//Task-4
+console.log("Task-4");
+let len;
+const fun=(i,arr)=>{
+    let k=0;
+    while (k<cars.length){
+        k+=1;
+    }
+    return k;
+}
+len=cars.reduce(fun);
+console.log("Total number of cars are: "+len);
+--------------------------------------------------
+//Task-4
+console.log("Task-4");
+let arr=cars.reduce(myfun)
+
+function myfun(total,value,index,array){
+    return index+1
+}
+console.log("Total number of cars are: "+arr);
+-------------------------------------------------
+Assesment-2
+const carData = [
+  {
+    carCompany: "Toyota",
+    country: "Japan",
+    cars: [
+      { carModal: "Corolla", date: "2020-03-12", color: "White", id: "TY-001" },
+      { carModal: "Camry", date: "2021-06-18", color: "Black", id: "TY-002" },
+      { carModal: "RAV4", date: "2019-09-22", color: "Blue", id: "TY-003" },
+      { carModal: "Yaris", date: "2022-01-10", color: "Red", id: "TY-004" },
+      { carModal: "Fortuner", date: "2023-04-05", color: "Silver", id: "TY-005" }
+    ]
+  },
+  {
+    carCompany: "Honda",
+    country: "Japan",
+    cars: [
+      { carModal: "Civic", date: "2020-05-14", color: "Gray", id: "HN-001" },
+      { carModal: "Accord", date: "2021-07-30", color: "Black", id: "HN-002" },
+      { carModal: "CR-V", date: "2019-11-02", color: "White", id: "HN-003" },
+      { carModal: "City", date: "2022-08-19", color: "Blue", id: "HN-004" },
+      { carModal: "Jazz", date: "2023-02-27", color: "Red", id: "HN-005" },
+      { carModal: "Amaze", date: "2021-12-11", color: "Silver", id: "HN-006" }
+    ]
+  },
+  {
+    carCompany: "Hyundai",
+    country: "South Korea",
+    cars: [
+      { carModal: "i20", date: "2020-04-01", color: "White", id: "HY-001" },
+      { carModal: "Creta", date: "2021-09-15", color: "Black", id: "HY-002" },
+      { carModal: "Verna", date: "2019-06-28", color: "Red", id: "HY-003" },
+      { carModal: "Tucson", date: "2022-10-09", color: "Blue", id: "HY-004" },
+      { carModal: "Venue", date: "2023-01-17", color: "Gray", id: "HY-005" }
+    ]
+  },
+  {
+    carCompany: "Ford",
+    country: "USA",
+    cars: [
+      { carModal: "F-150", date: "2020-08-13", color: "Black", id: "FD-001" },
+      { carModal: "Mustang", date: "2021-05-20", color: "Red", id: "FD-002" },
+      { carModal: "Explorer", date: "2019-12-07", color: "White", id: "FD-003" },
+      { carModal: "Escape", date: "2022-03-14", color: "Blue", id: "FD-004" },
+      { carModal: "Bronco", date: "2023-06-01", color: "Green", id: "FD-005" }
+    ]
+  },
+  {
+    carCompany: "BMW",
+    country: "Germany",
+    cars: [
+      { carModal: "X1", date: "2020-02-25", color: "White", id: "BM-001" },
+      { carModal: "X3", date: "2021-06-08", color: "Black", id: "BM-002" },
+      { carModal: "X5", date: "2019-11-19", color: "Blue", id: "BM-003" },
+      { carModal: "3 Series", date: "2022-04-30", color: "Gray", id: "BM-004" },
+      { carModal: "5 Series", date: "2023-07-12", color: "Silver", id: "BM-005" }
+    ]
+  },
+  {
+    carCompany: "Audi",
+    country: "Germany",
+    cars: [
+      { carModal: "A3", date: "2020-09-10", color: "Red", id: "AU-001" },
+      { carModal: "A4", date: "2021-01-22", color: "Black", id: "AU-002" },
+      { carModal: "A6", date: "2019-05-17", color: "White", id: "AU-003" },
+      { carModal: "Q5", date: "2022-08-03", color: "Blue", id: "AU-004" },
+      { carModal: "Q7", date: "2023-03-26", color: "Gray", id: "AU-005" }
+    ]
+  },
+  {
+    carCompany: "Mercedes-Benz",
+    country: "Germany",
+    cars: [
+      { carModal: "A-Class", date: "2020-07-06", color: "White", id: "MB-001" },
+      { carModal: "C-Class", date: "2021-04-12", color: "Black", id: "MB-002" },
+      { carModal: "E-Class", date: "2019-10-29", color: "Silver", id: "MB-003" },
+      { carModal: "GLA", date: "2022-12-18", color: "Blue", id: "MB-004" },
+      { carModal: "GLE", date: "2023-05-09", color: "Gray", id: "MB-005" }
+    ]
+  },
+  {
+    carCompany: "Tata",
+    country: "India",
+    cars: [
+      { carModal: "Nexon", date: "2020-01-15", color: "White", id: "TT-001" },
+      { carModal: "Harrier", date: "2021-06-24", color: "Black", id: "TT-002" },
+      { carModal: "Safari", date: "2019-09-08", color: "Blue", id: "TT-003" },
+      { carModal: "Punch", date: "2022-11-16", color: "Red", id: "TT-004" },
+      { carModal: "Tiago", date: "2023-02-21", color: "Gray", id: "TT-005" }
+    ]
+  },
+  {
+    carCompany: "Kia",
+    country: "South Korea",
+    cars: [
+      { carModal: "Seltos", date: "2020-03-28", color: "Black", id: "KI-001" },
+      { carModal: "Sonet", date: "2021-07-19", color: "White", id: "KI-002" },
+      { carModal: "Carnival", date: "2019-12-02", color: "Silver", id: "KI-003" },
+      { carModal: "EV6", date: "2022-05-14", color: "Blue", id: "KI-004" },
+      { carModal: "Sportage", date: "2023-08-01", color: "Red", id: "KI-005" }
+    ]
+  },
+  {
+    carCompany: "Volkswagen",
+    country: "Germany",
+    cars: [
+      { carModal: "Polo", date: "2020-04-17", color: "White", id: "VW-001" },
+      { carModal: "Vento", date: "2021-09-09", color: "Black", id: "VW-002" },
+      { carModal: "Taigun", date: "2022-02-25", color: "Blue", id: "VW-003" },
+      { carModal: "Tiguan", date: "2019-11-11", color: "Gray", id: "VW-004" },
+      { carModal: "Passat", date: "2023-06-20", color: "Silver", id: "VW-005" }
+    ]
+  }
+];
+ 
+ //Task-1
+ console.log("Task-1");
+ const count={};
+ carData.forEach(fun1);
+ function fun1(value,index,arr){
+     if(value.carCompany in count){
+         count[value.carCompany]+=value.cars.length;
+     }
+     else{
+         count[value.carCompany]=value.cars.length;
+     }
+ }
+ console.log(count);
+ console.log('\n');
+ 
+ //Task-2
+ console.log("Task-2");
+ carData.map(x=> console.log(`${x.carCompany}-${x.country}`));
+ console.log('\n');
+ 
+//Task-3
+console.log("Task-3");
+ let t=carData.reduce(fun2,0);
+ function fun2(total,value){
+     return total+value.cars.length;
+ }
+ console.log(t);
+ console.log('\n');
+  
+ //Task-4
+ console.log("Task-4");
+ a=[];
+ const d=new Date();
+ let year=d.getFullYear();
+ carData.forEach(x=>x.cars.forEach(fun3));
+ 
+ function fun3(value){
+     let t_date=new Date(value.date);
+     a.push({'carModal':value.carModal,'carAge':year-t_date.getFullYear()});
+ }
+console.log(a);
+console.log('\n');
+
+
+
+
+
+
+
