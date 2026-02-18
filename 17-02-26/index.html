@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <link href="./output.css" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <!-- <img src="assets/background_pokemon.webp" class="opacity-70 filter brightness-70  absolute h-cover w-screen"> -->
+
+    <div class="flex flex-col items-center pt-10">
+        <img src="./assets/Pokédex_logo.png" class="h-50 w-110">
+        <img src="./assets/pokeball.png" class="h-30 w-30">
+    </div>
+
+    <div class="pt-30">
+        <div class="ml-30">Enter name or ID</div>
+        <input type="text" id="pokemon-name" placeholder="Enter pokemon name"
+        class="h-10 w-100 border border-2 border-b-black rounded-sm ml-30">
+        <button onclick="fetching()" class="border border-2 border-b-black rounded-sm px-5 ml-20">SEARCH</button>
+    </div>
+
+    <div class="mt-20 mx-25 text-center text-3xl">Pick a Character</div>
+    <div id='container' class="grid grid-cols-3 grid-rows-3 h-150 border-4 mx-25 mt-3 mb-10 rounded-lg">
+        <div id="card"
+        class="h-100 w-80 border m-10 rounded-xl bg-blue-400">
+            <div class="bg-fuchsia-200 h-100 w-80 rounded-full"></div>
+            <img src="" style="display: none;" id="pokemon-image">
+            <p id="name"></p>
+            <p id="id"></p>
+        </div>
+    </div>
+
+    <div class="flex justify-center mb-10">
+        <button onclick="" class="border border-2 border-b-black p-1 rounded-md">LOAD MORE</button>
+    </div>
+
+    <footer class="bg-red-400" flex justify-center my-10 >
+        <div class=" text-5xl text-center text-red-700 pt-5">POKEMON</div>
+        <div class="flex py-10 justify-center gap-2.5">
+            <img src="./assets/character-1.png" class="h-30 w-40">
+            <img src="./assets/character-2.png" class="h-30 w-40">
+            <img src="./assets/character-4.png" class="h-30 w-40">
+            <img src="./assets/character-3.png" class="h-30 w-40">
+        </div>
+    </footer>
+    <img src="" style="display: none;" id="pokemon-image">
+</body>
+
+</html>
