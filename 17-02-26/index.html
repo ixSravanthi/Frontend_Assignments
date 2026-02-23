@@ -14,24 +14,24 @@
         <img src="assets/background_characters.jpg" class="opacity-70 filter brightness-50 -z-10 absolute w-screen inset-0 h-full">
 
         <div class="opacity-100 filter brightness-100">
-            <header class="flex flex-col items-center pt-10">
-                <img src="./assets/Pokédex_logo.png" class="h-50 w-110">
+            <header class="flex flex-col items-center">
+                <img src="./assets/Pokédex_logo.png" class="h-30 w-90 sm:h-50 w-90">
                 <img src="./assets/pokeball.png" class="h-30 w-30">
             </header>
 
             <main>        
-                <div class="pt-30">
-                    <div class="ml-30">Enter name</div>
+                <div class="pt-30 ml-10">
+                    <div class="">Enter name</div>
                     <input type="text" id="pokemon-name" placeholder="Enter pokemon name"
-                    class="h-10 w-100 border border-2 border-b-black rounded-sm ml-30 bg-white">
-                    <button onclick="" class="border-2 hover:border-b-black rounded-sm px-5 ml-20 bg-white" id="search">SEARCH</button>
+                    class="h-10 w-50 sm:w-80 md:w-100 lg:w-110 border border-2 border-b-black rounded-sm bg-white mt-3 mr-5">
+                    <button onclick="" class="border-2 hover:border-b-black rounded-sm bg-white p-1" id="search">SEARCH</button>
                 </div>
                 <div id="suggestions"
-                    class="absolute bg-white w-100 shadow-lg rounded-md hidden z-50 ml-30">
+                    class="absolute bg-white w-100 shadow-lg rounded-md hidden z-50">
                 </div>
 
-                <div class="mt-20 mx-25 text-center text-3xl">Pick a Character</div>
-                <div id="container" class="flex flex-wrap justify-around h-140 border-4 mx-25 mt-3 mb-10 rounded-lg overflow-y-scroll">
+                <div class="mt-20 text-center text-3xl">Pick a Character</div>
+                <div id="container" class="flex flex-wrap justify-around h-140 border-4 mt-3 mb-10 mx-10 rounded-lg overflow-y-scroll">
                 </div>
 
                 <div id="pagenation" class="flex justify-center gap-5 pb-30"></div>
@@ -43,11 +43,11 @@
 
     <footer class="bg-red-400 flex flex-col items-center opacity-100 brightness-100">
         <div class="text-5xl text-center text-red-700 pt-5">POKEMON</div>
-        <div class="flex py-10 justify-center gap-2.5">
-            <img src="./assets/character-1.png" class="h-30 w-40">
-            <img src="./assets/character-2.png" class="h-30 w-40">
-            <img src="./assets/character-4.png" class="h-30 w-40">
-            <img src="./assets/character-3.png" class="h-30 w-40">
+        <div class="flex py-10 justify-center gap-0.5 sm:gap:1.5 md:2.5">
+            <img src="./assets/character-1.png" class="h-20 w-30 sm:h-30 w-40">
+            <img src="./assets/character-2.png" class="h-20 w-30 sm:h-30 w-40">
+            <img src="./assets/character-4.png" class="h-20 w-30 sm:h-30 w-40">
+            <img src="./assets/character-3.png" class="h-20 w-30 sm:h-30 w-40">
         </div>
     </footer>
 

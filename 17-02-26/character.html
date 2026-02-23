@@ -5,18 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="./output.css" rel="stylesheet">
-    <script src="char_script.js"></script>
+    <script src="char_script.js" defer></script>
 </head>
-<body class="relative">
-    <img src="./assets/background_pokemon.webp" class="absolute opacity-50 filter brightness-60 w-screen h-screen">
+<body class="relative min-h-screen">
+    <img src="./assets/background_pokemon.webp" class="absolute inset-0 opacity-50 filter brightness-60 w-full h-full -z-10 object-cover">
     <div class="opacity-100 filter brightness-100">
-        <header class="flex gap-2 px-30 py-10">
-            <a href="index.html"><img src="./assets/left-arrow.png" class="h-10"></a>
-            <a href="index.html" class="mt-1 text-2xl">HOME</a>
-        </header>
-        <main class="grid grid-cols-2">
-            <img class="h-130 pl-15 -pt-20" id="main-image" src="">
-            <div id="main-details" class="h-130 w-130 rounded-lg bg-blue-100 opacity-70 p-10"></div>
+        <header id="header" class="flex gap-2 px-10 sm:px-20 md:px-30 py-10"></header>
+        <main class="flex flex-col items-center pb-10 gap-10 lg:flex-row justify-center">
+            <img class="h-60 sm:h-100 md:h-125 lg:h-140" id="main-image" src="">
+            <div id="main-details" class="rounded-lg bg-blue-100 opacity-70 p-10 m-5"></div>
         </main>
     </div>
 </body>

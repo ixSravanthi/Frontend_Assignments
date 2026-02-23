@@ -9,7 +9,7 @@ let current_page =
 const input = document.getElementById("pokemon-name");
 input.addEventListener("input", showSuggestions);
 
-document.getElementById('search').onclick=()=>searchPokemon(document.getElementById('pokemon-name').value);
+document.getElementById('search').onclick=()=>searchPokemon(document.getElementById('pokemon-name').value),current_page;
 
 let pokemonList = [];
 
@@ -89,11 +89,14 @@ async function generateCards(page){
 
         for(let i=s;i<e;i++){
             const details=await fetch_details_ById(i);
+            if(!details || !details.sprites){
+                generatePagenation();
+                return;
+            }
             const myCard=document.createElement("div");
 
             myCard.addEventListener("click", () => {
-                searchPokemon(details.name);
-                console.log('button clicked');
+                searchPokemon(details.name,current_page);
             });
             myCard.innerHTML=`
             <div class="h-70 w-50 border m-10 rounded-xl bg-blue-400">
@@ -107,7 +110,7 @@ async function generateCards(page){
             </div>`
             container.append(myCard);
         }
-        generatePagenation()
+        generatePagenation();
     }
     catch(error){
         console.log("ERROR---> in generateCards");
@@ -125,8 +128,10 @@ function generatePagenation(){
     const prev_button=document.createElement('button');
     prev_button.textContent='<< previous';
     prev_button.onclick=()=>generateCards(current_page-1);
-    prev_button.disabled=current_page===1;
     prev_button.className='border rounded-sm p-0.5 bg-gray-300 hover:bg-white';
+    if(current_page===1){
+        prev_button.classList.add("hidden");
+    }
     pagenation.append(prev_button);
 
     for(let j=start;j<=end;j++){
@@ -140,8 +145,10 @@ function generatePagenation(){
     const next_button=document.createElement('button');
     next_button.textContent='next >>';
     next_button.onclick=()=>generateCards(current_page+1);
-    next_button.disabled=current_page===total_page;
     next_button.className="border rounded-sm p-0.5 bg-gray-300 hover:bg-white";
+    if(current_page===52){
+        next_button.classList.add("hidden");
+    }
     pagenation.append(next_button);
 }
 
@@ -190,9 +197,9 @@ document.addEventListener("click",(e)=>{
     }
 });
 
-function searchPokemon(name){
+function searchPokemon(name,page){
     window.location.href =
-        `character.html?name=${name}`;
+        `character.html?name=${name}&page=${page}`;
 }
  
 function updateURL(page){
