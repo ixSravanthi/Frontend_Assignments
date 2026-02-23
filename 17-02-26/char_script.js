@@ -6,37 +6,6 @@ document.getElementById('header').innerHTML=`
     <a href="index.html?page=${page}"><img src="./assets/left-arrow.png" class="h-8 md:h-12 lg:h-15"></a>
     <a href="index.html?page=${page}" class="text-2xl md:text-3xl lg:text-4xl pt-1">HOME</a>`
 
-// async function generateDetails(){
-//     const name=urlParams.get('name'); 
-//     const image=document.getElementById('main-image');
-//     const details=document.getElementById('main-details');
-//     const fullData=await fetch_details_ByName(name);
-//     image.src=fullData.sprites.other.home.front_default;
-//     details.innerHTML=`
-//         <div class="flex justify-between">
-//             <h2 class="text-4xl font-bold">
-//                 ${fullData.name.toUpperCase()}
-//             </h2>
-//             <p class="text-4xl text-shadow-zinc-400">#${fullData.id}</p>
-//         </div>
-//         <br>
-//         <p><strong>Height:</strong> ${fullData.height}</p>
-//         <p><strong>Weight:</strong> ${fullData.weight}</p>
-
-//         <p><strong>Types:</strong>
-//             ${fullData.types
-//                 .map(t => t.type.name)
-//                 .join(", ")}
-//         </p>
-
-//         <p><strong>Abilities:</strong>
-//             ${fullData.abilities
-//                 .map(a => a.ability.name)
-//                 .join(", ")}
-//         </p>
-// `
-// }
-
 async function generateDetails(){
 
     const name = urlParams.get('name');

@@ -27,30 +27,6 @@ window.onload = async () => {
     generateCards(current_page);
 };
 
-// async function fetch_card(){
-//     try{
-//         const DataObject=await fetch_details_ByName();
-
-//         const container=document.getElementById('container');
-//         container.innerHTML=`
-//             <div id="card"
-//             class="h-100 w-70 border m-10 rounded-xl bg-blue-400">
-//                 <div class="bg-fuchsia-200 h-100 w-70 rounded-full">
-//                     <img src=${DataObject.sprites.other.home.front_default} id="pokemon-image">
-//                     <div class="flex flex-col items-center text-3xl">
-//                         <p id="name">${DataObject.name}</p>
-//                         <p id="id">${DataObject.id}</p>
-//                     </div>
-//                 </div>
-//             </div>`
-//     }
-//     catch(error){
-//         console.log("ERROR---> in fetch_card");
-//         console.log(error);
-//         return {}
-//     }
-// }
-
 async function fetch_details_ByName(){
     try{
         let pokemon_name=document.getElementById('pokemon-name').value.toLowerCase();
