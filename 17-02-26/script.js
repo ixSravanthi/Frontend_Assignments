@@ -1,23 +1,18 @@
 const limit=20;
 const total_page=52;
 
-const params = new URLSearchParams(window.location.search);
+const params=new URLSearchParams(window.location.search);
 
-let current_page =
-    parseInt(params.get("page")) || 1;
+let current_page=parseInt(params.get("page")) || 1;
 
-const input = document.getElementById("pokemon-name");
+const input=document.getElementById("pokemon-name");
 input.addEventListener("input", showSuggestions);
 
-document.getElementById('search').onclick=()=>searchPokemon(document.getElementById('pokemon-name').value),current_page;
+document.getElementById('search').onclick=()=>searchPokemon(document.getElementById('pokemon-name').value,current_page);
 
 let pokemonList = [];
-
 async function loadPokemonNames(){
-    const res = await fetch(
-        "https://pokeapi.co/api/v2/pokemon?limit=1300"
-    );
-
+    const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=1300");
     const data = await res.json();
     pokemonList = data.results;
 }
@@ -130,57 +125,40 @@ function generatePagenation(){
 
 
 function showSuggestions(){
-
     const value = input.value.toLowerCase();
     const box = document.getElementById("suggestions");
-
     box.innerHTML = "";
-
     if(value.length === 0){
         box.classList.add("hidden");
         return;
     }
-
-    const matches = pokemonList
-        .filter(p => p.name.startsWith(value))
-        .slice(0,5);
-
+    const matches = pokemonList.filter(p => p.name.startsWith(value)).slice(0,5);
+    console.log(matches);
     matches.forEach(pokemon => {
-
         const item = document.createElement("div");
-
         item.textContent = pokemon.name;
-        item.className =
-        "p-2 cursor-pointer hover:bg-gray-200 w-100";
-
+        item.className ="p-2 cursor-pointer hover:bg-gray-200 w-100";
         item.onclick = () => {
             input.value = pokemon.name;
             box.classList.add("hidden");
-            fetch_card();
+            searchPokemon(pokemon.name,current_page);
         };
-
         box.append(item);
     });
-
     box.classList.remove("hidden");
 }
 
 document.addEventListener("click",(e)=>{
     if(!e.target.closest("#pokemon-name")){
-        document
-          .getElementById("suggestions")
-          .classList.add("hidden");
+        document.getElementById("suggestions").classList.add("hidden");
     }
 });
 
 function searchPokemon(name,page){
-    window.location.href =
-        `character.html?name=${name}&page=${page}`;
+    window.location.href =`character.html?name=${name}&page=${page}`;
 }
  
 function updateURL(page){
-    const url =
-        `${window.location.pathname}?page=${page}`;
-
+    const url =`${window.location.pathname}?page=${page}`;
     window.history.pushState({}, "", url);
 }

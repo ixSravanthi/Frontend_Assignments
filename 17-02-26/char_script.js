@@ -7,7 +7,6 @@ document.getElementById('header').innerHTML=`
     <a href="index.html?page=${page}" class="text-2xl md:text-3xl lg:text-4xl pt-1">HOME</a>`
 
 async function generateDetails(){
-
     const name = urlParams.get('name');
     const image = document.getElementById('main-image');
     const details = document.getElementById('main-details');
@@ -15,28 +14,20 @@ async function generateDetails(){
 
     image.src=data.sprites.other.home.front_default;
 
-    const types = data.types
-        .map(t => `<span class="p-1 bg-orange-300 rounded">${t.type.name}</span>`)
-        .join(" ");
+    const types=data.types.map(t=>`<span class="p-1 bg-orange-300 rounded">${t.type.name}</span>`).join(" ");
 
-    const abilities = data.abilities
-        .map(a => `<span class="rounded p-1 bg-amber-300">${a.ability.name}</span>`)
-        .join(", ");
+    const abilities=data.abilities.map(a=>`<span class="rounded p-1 bg-amber-300">${a.ability.name}</span>`).join(" ");
 
-    const stats = data.stats.map(stat => `
+    const stats=data.stats.map(stat=>`
         <div class="mb-2">
             <p>${stat.stat.name} : ${stat.base_stat}</p>
             <div class="w-full bg-gray-300 rounded">
-                <div class="bg-blue-500 h-3 rounded"
-                     style="width:${(stat.base_stat/200)*100}%"></div>
+                <div class="bg-blue-500 h-3 rounded" style="width:${(stat.base_stat/200)*100}%"></div>
             </div>
         </div>
     `).join("");
 
-    const moves = data.moves
-        .slice(0,6)
-        .map(m => m.move.name)
-        .join(", ");
+    const moves=data.moves.slice(0,6).map(m=>m.move.name).join(", ");
 
     details.innerHTML = `
         <h2 class="text-4xl font-bold flex justify-between pb-2">
