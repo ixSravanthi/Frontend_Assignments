@@ -28,7 +28,7 @@ async function generateDetails(){
             <p>${stat.stat.name} : ${stat.base_stat}</p>
             <div class="w-full bg-gray-300 rounded">
                 <div class="bg-blue-500 h-3 rounded"
-                     style="width:${stat.base_stat}%"></div>
+                     style="width:${(stat.base_stat/200)*100}%"></div>
             </div>
         </div>
     `).join("");
