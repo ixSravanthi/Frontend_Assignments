@@ -133,7 +133,6 @@ function showSuggestions(){
         return;
     }
     const matches = pokemonList.filter(p => p.name.startsWith(value)).slice(0,5);
-    console.log(matches);
     matches.forEach(pokemon => {
         const item = document.createElement("div");
         item.textContent = pokemon.name;
