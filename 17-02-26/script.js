@@ -18,6 +18,9 @@ async function loadPokemonNames(){
 }
 
 window.onload = async () => {
+    if(current_page>total_page){
+        current_page=total_page;
+    }
     await loadPokemonNames();
     generateCards(current_page);
 };
@@ -50,7 +53,7 @@ async function fetch_details_ById(a){
 
 async function generateCards(page){
     try{
-        const s=((page-1)*limit)+1;
+        const s= (page-1)*limit;
         const e=s+limit;
         current_page=page;
         updateURL(page);
@@ -59,23 +62,27 @@ async function generateCards(page){
         container.innerHTML=""
 
         for(let i=s;i<e;i++){
-            const details=await fetch_details_ById(i);
-            if(!details || !details.sprites){
+            // const details=await fetch_details_ById(i);
+            const id = pokemonList[i].url.split("/")[6];
+            const name=pokemonList[i].name;
+            console.log(i,id,name);
+            const image =`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
+            if(!id || !image){
                 generatePagenation();
                 return;
             }
             const myCard=document.createElement("div");
 
             myCard.addEventListener("click", () => {
-                searchPokemon(details.name,current_page);
+                searchPokemon(name,current_page);
             });
             myCard.innerHTML=`
             <div class="h-70 w-50 border m-10 rounded-xl bg-blue-400">
                 <div class="bg-fuchsia-200 h-69 w-50 rounded-full">
-                    <img src=${details.sprites.other.home.front_default} id="pokemon-image">
+                    <img src=${image} id="pokemon-image">
                     <div class="flex flex-col items-center text-2xl">
-                        <p id="name">${details.name}</p>
-                        <p id="id" class="text-gray-500">#${details.id}</p>
+                        <p id="name">${name}</p>
+                        <p id="id" class="text-gray-500">#${id}</p>
                     </div>
                 </div> 
             </div>`
@@ -136,7 +143,7 @@ function showSuggestions(){
     matches.forEach(pokemon => {
         const item = document.createElement("div");
         item.textContent = pokemon.name;
-        item.className ="p-2 cursor-pointer hover:bg-gray-200 w-100";
+        item.className ="p-2 cursor-pointer hover:bg-gray-200";
         item.onclick = () => {
             input.value = pokemon.name;
             box.classList.add("hidden");
