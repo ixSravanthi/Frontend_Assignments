@@ -1,5 +1,5 @@
 let users = JSON.parse(localStorage.getItem("users")) || [];
-const params=URLSearchParams();
+const params=new URLSearchParams();
 // console.log(users);
 
 let mail=document.getElementById('mail');

@@ -15,6 +15,9 @@ function values(){
         params.set('role',user.role);
         window.location.href=`${user.role}_dashboard.html?${params.toString()}`;
     }
+    else{
+        alert("Not exisiting user");
+    }
     console.log(user);
     console.log(mail.value,password.value,user.role);
 }
