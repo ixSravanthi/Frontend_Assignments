@@ -16,3 +16,7 @@ if(managerPermissions.viewReports){
 if(managerPermissions.editProfile){
     document.getElementById("edit_profile_section").style.display = "block";
 }
+
+if(managerPermissions.editTasks){
+    document.getElementById("edit_tasks_section").style.display = "block";
+}

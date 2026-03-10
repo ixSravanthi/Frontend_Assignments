@@ -2,11 +2,13 @@ if(!localStorage.getItem("permissions")){
     const permissions = {
         employee: {
             viewReports: false,
-            editProfile: false
+            editProfile: false,
+            editTasks: false
         },
         manager: {
-            viewReports: true,
-            editProfile: true
+            viewReports: false,
+            editProfile: false,
+            editTasks: false
         }
     };
 

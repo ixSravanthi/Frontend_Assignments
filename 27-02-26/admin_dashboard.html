@@ -8,13 +8,15 @@
     <script src="admin.js" defer></script>
     <title>Document</title>
 </head>
-<body>
-    <div id="name"></div>
-    <h2>Admin Permission Panel</h2>
+<body class="flex flex-col h-100 items-center gap-10">
+    <div class="text-3xl flex flex-col items-center">
+        <div id="name"></div>
+        <h2>Admin Permission Panel</h2>
+    </div>
 
-    <div class="flex gap-5">
+    <div class="flex gap-30">
         <div>
-            <h3>Employee Permissions</h3>
+            <div class="text-2xl">Employee Permissions</div>
             <div class="flex flex-col">
                 <label>
                 <input type="checkbox" id="emp_viewReports"> View Reports
@@ -23,11 +25,15 @@
                 <label>
                 <input type="checkbox" id="emp_editProfile"> Edit Profile
                 </label>
+
+                <label>
+                <input type="checkbox" id="emp_editTasks"> Edit Tasks
+                </label>
             </div>
         </div>
 
         <div>
-            <h3>Manager Permissions</h3>
+            <div class="text-2xl">Manager Permissions</div>
             <div class="flex flex-col">
                 <label>
                 <input type="checkbox" id="mgr_viewReports"> View Reports
@@ -36,10 +42,14 @@
                 <label>
                 <input type="checkbox" id="mgr_editProfile"> Edit Profile
                 </label>
+
+                <label>
+                <input type="checkbox" id="mgr_editTasks"> Edit Tasks
+                </label>
             </div>
         </div>
     </div>
 
-    <button id="save_permissions" class="border rounded-md px-1  ">Save Permissions</button>
+    <button id="save_permissions" class="border rounded-md px-1 w-50">Save Permissions</button>
 </body>
 </html>

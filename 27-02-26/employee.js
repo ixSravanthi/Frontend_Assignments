@@ -16,3 +16,7 @@ if(employeePermissions.viewReports){
 if(employeePermissions.editProfile){
     document.getElementById("edit_profile_section").style.display = "block";
 }
+
+if(employeePermissions.editTasks){
+    document.getElementById("edit_tasks_section").style.display = "block";
+}
